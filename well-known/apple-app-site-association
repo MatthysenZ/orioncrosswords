@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "MK27548ZCC.com.orion.crosswords"
+        ],
+        "components": [
+          { "/": "/app/journey" },
+          { "/": "/app/fragments" },
+          { "/": "/app/shop" },
+          { "/": "/app/profile" }
+        ]
+      }
+    ]
+  }
+}
