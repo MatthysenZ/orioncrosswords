@@ -13,7 +13,7 @@
   var STORE_URL = 'https://apps.apple.com/app/id' + APP_ID;
   var TITLE = 'Orion: A Word Puzzle Game';
   var SUBTITLE = 'On the App Store';
-  var ICON_SRC = '/app-icon.png';
+  var ICON_SRC = '/appicon.png';
   var DISMISS_KEY = 'orion.appbanner.dismissed';
   var DISMISS_DAYS = 14;
 
@@ -57,7 +57,7 @@ cursor:pointer;-webkit-appearance:none}\
 .ob-hit{flex:1 1 auto;display:flex;align-items:center;gap:12px;\
 min-width:0;text-decoration:none;color:inherit}\
 .ob-icon{flex:0 0 auto;width:46px;height:46px;border-radius:10px;\
-background:#000;object-fit:cover}\
+object-fit:contain}\
 .ob-text{flex:1 1 auto;min-width:0}\
 .ob-title{color:#fff;font-size:14px;font-weight:600;line-height:1.25;\
 white-space:nowrap;overflow:hidden;text-overflow:ellipsis}\
@@ -87,7 +87,7 @@ text-transform:uppercase;letter-spacing:.02em;padding:6px 4px}\
   hit.href = STORE_URL;
   hit.rel = 'noopener';
 
-  // The icon is optional: if /app-icon.png is not deployed the banner simply
+  // The icon is optional: if /appicon.png is not deployed the banner simply
   // renders without it rather than showing a broken image.
   var icon = document.createElement('img');
   icon.className = 'ob-icon';
