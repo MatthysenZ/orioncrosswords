@@ -184,11 +184,15 @@
   <h3>Advertising</h3>
   <p>The App displays ads via Google AdMob. If you grant App Tracking Transparency (ATT) permission, AdMob may receive your Identifier for Advertisers (IDFA) to serve personalised ads. If you decline, ads are non-personalised. We never receive your IDFA — it stays between your device and Google.</p>
 
+  <h3>Crash reports &amp; diagnostics</h3>
+  <p>We use Sentry to collect crash reports and diagnostic information, linked to your anonymous player identifier. This includes the error or crash details, the App version, your device model, and the iOS version, so we can reproduce and fix the problem. It does not include your name, email, contacts, or location, and we do not use it to track you across apps or websites.</p>
+
   <h2 id="use">3. How we use information &amp; legal basis</h2>
   <p>We process the limited data described above for the following purposes, on the following legal bases under Article 6 GDPR:</p>
   <ul>
     <li><strong>Provide the App and save your progress</strong> — Art. 6(1)(b), performance of the contract between you and us.</li>
     <li><strong>Deliver in-app purchases</strong> — Art. 6(1)(b), performance of the contract.</li>
+    <li><strong>Diagnose crashes and fix bugs</strong> — Art. 6(1)(f), legitimate interest in keeping the App stable and secure.</li>
     <li><strong>Serve non-personalised advertising</strong> — Art. 6(1)(f), legitimate interest in funding the App.</li>
     <li><strong>Serve personalised advertising (only if you opt in via ATT)</strong> — Art. 6(1)(a), your consent. You can withdraw consent at any time in iOS Settings → Privacy &amp; Security → Tracking.</li>
   </ul>
@@ -204,6 +208,7 @@
       <tr><td>Apple (Apple Distribution International, Ireland)</td><td>App distribution &amp; in-app purchase</td><td>Handled entirely by Apple — we receive only the receipt</td></tr>
       <tr><td>Supabase Inc. (United States)</td><td>Anonymous gameplay storage</td><td>Anonymous account ID, gameplay progress</td></tr>
       <tr><td>RevenueCat Inc. (United States)</td><td>Purchase entitlements</td><td>Anonymous user ID, product ID, receipt</td></tr>
+      <tr><td>Functional Software, Inc. d/b/a Sentry (United States)</td><td>Crash reporting &amp; diagnostics</td><td>Anonymous player identifier, crash and error details, App version, device model, iOS version</td></tr>
       <tr><td>Google Ireland Ltd / Google LLC (AdMob)</td><td>Advertising</td><td>IDFA (only if you grant ATT), device info</td></tr>
     </tbody>
   </table>
@@ -219,6 +224,7 @@
 
   <h2 id="retention">7. Data retention</h2>
   <p>Anonymous gameplay data is retained while your account exists. When you delete your account from the Profile screen, all associated data is erased immediately, except where retention is required by law (e.g. Apple's purchase records for tax compliance, which Apple — not we — control).</p>
+  <p>Crash reports and diagnostic data held in Sentry are retained for up to 90 days and then deleted automatically.</p>
 
   <h2 id="security">8. Security</h2>
   <p>We use industry-standard safeguards including TLS encryption in transit, encryption at rest, and row-level access controls so each anonymous account can only access its own row. No system is perfectly secure, but we work to protect data continuously.</p>
