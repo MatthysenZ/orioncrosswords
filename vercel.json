@@ -37,6 +37,11 @@
       "permanent": false
     },
     {
+      "source": "/go/reddit",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=reddit-bio&mt=8",
+      "permanent": false
+    },
+    {
       "source": "/go/press",
       "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=press-kit&mt=8",
       "permanent": false

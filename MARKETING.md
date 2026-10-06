@@ -36,6 +36,7 @@ destination can be repointed in one commit instead of editing seven bios.
 | `orionwordgame.com/go/threads` | `threads-bio` |
 | `orionwordgame.com/go/bsky` | `bsky-bio` |
 | `orionwordgame.com/go/facebook` | `facebook-bio` |
+| `orionwordgame.com/go/reddit` | `reddit-bio` |
 | `orionwordgame.com/go/press` | `press-kit` |
 | `orionwordgame.com/download` | `website-download` |
 
