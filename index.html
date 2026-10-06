@@ -1,58 +1,256 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-itunes-app" content="app-id=6807606521">
-    <script src="/smart-banner.js" defer></script>
-    <title>Orion Word Game</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orion Word Game: a calm word puzzle for iPhone</title>
+<meta name="description" content="Connect letters, uncover hidden words and travel through 24 Dreams. Three new Fragments every day. A calm word puzzle, free on iPhone.">
+<link rel="canonical" href="https://www.orionwordgame.com/">
+<meta name="theme-color" content="#07070c">
 
-        html, body {
-            background-color: #111111;
-            height: 100%;
-            overflow: hidden;
-        }
+<!-- Safari's own install banner, with the campaign token so installs from the site are counted -->
+<meta name="apple-itunes-app" content="app-id=6807606521, affiliate-data=pt=121878938&amp;ct=smartbanner">
+<!-- The current site also loads its own banner script. Keep this line if you still use it:
+<script src="/smart-banner.js" defer></script> -->
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orion Word Game">
+<meta property="og:title" content="Orion Word Game">
+<meta property="og:description" content="A word puzzle that becomes a journey. 24 Dreams to explore, three new Fragments every day. Free on iPhone.">
+<meta property="og:url" content="https://www.orionwordgame.com/">
+<meta property="og:image" content="https://www.orionwordgame.com/assets/share-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@orionwordgame">
 
-        .center-image {
-            max-width: 320px;
-            width: 100%;
-            object-fit: contain;
-        }
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-        .footer {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-        }
+<link rel="preload" as="image" href="assets/keyart-1600.webp" imagesrcset="assets/keyart-960.webp 960w, assets/keyart-1600.webp 1600w, assets/keyart-2560.webp 2560w" imagesizes="108vw" fetchpriority="high">
+<link rel="preload" as="image" href="assets/grid.svg" media="(min-width: 721px)">
+<link rel="preload" as="image" href="assets/grid-tall.svg" media="(max-width: 720px)">
+<link rel="stylesheet" href="css/home.css">
 
-        .footer span {
-            color: #888;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-        }
-    </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Orion: A Word Puzzle Game","alternateName":"Orion Word Game","operatingSystem":"iOS 18.5 or later","applicationCategory":"GameApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Dream Prism","url":"https://www.dreamprism.games/"},"url":"https://www.orionwordgame.com/","installUrl":"https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=website-home&mt=8"}
+</script>
 </head>
 <body>
-    <img class="center-image" src="orioncomingsoon.png" alt="Orion Crosswords - Coming Soon">
 
-    <a class="footer"">
-        <span>All Rights Reserved.</span>
+<!-- ============================ HERO: key art + glass lens + lockup ============================ -->
+<header class="hero" id="top" data-rotate="keyart,space-blue,space-gold,space-purple,space-blue-gold,space-dawn" data-rotate-every="12">
+
+  <!-- layer 1: the key art. Two slots, so the background can cross-fade to the space backgrounds on a timer (home.js) -->
+  <div class="plate hero__bg">
+    <img class="slide slide--a on" src="assets/keyart-1920.jpg" srcset="assets/keyart-960.webp 960w, assets/keyart-1600.webp 1600w, assets/keyart-2560.webp 2560w" sizes="108vw" alt="" width="2560" height="1440" fetchpriority="high" decoding="async">
+    <img class="slide slide--b" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async">
+  </div>
+  <!-- layer 2: a soft copy that fades in while you scroll (the blur effect, without the cost of a live blur) -->
+  <div class="plate hero__blur" aria-hidden="true"><img src="assets/keyart-blur.webp" alt="" width="640" height="360" decoding="async"></div>
+  <!-- layer 3: the organic grid of game blocks. One SVG; its blocks fade in and out on their own. -->
+  <div class="plate hero__grid" aria-hidden="true"><picture><source media="(max-width: 720px)" srcset="assets/grid-tall.svg"><img src="assets/grid.svg" alt="" decoding="async"></picture></div>
+
+  <!-- layer 4: the glass. Decorative, so hidden from screen readers. -->
+  <div class="lens" aria-hidden="true">
+    <div class="lens__glass">
+      <div class="lens__frost">
+        <!-- the art again, one layer per colour, each magnified a little differently: that is the dispersion. Two sets, for the cross-fade. -->
+        <div class="lens__set lens__set--a on">
+          <div class="lens__plate lens__plate--r"><img src="assets/keyart-r.webp" alt="" decoding="async"></div>
+          <div class="lens__plate lens__plate--g"><img src="assets/keyart-g.webp" alt="" decoding="async"></div>
+          <div class="lens__plate lens__plate--b"><img src="assets/keyart-b.webp" alt="" decoding="async"></div>
+        </div>
+        <!-- set b starts as an empty 1-pixel picture; home.js fills it before each cross-fade -->
+        <div class="lens__set lens__set--b">
+          <div class="lens__plate lens__plate--r"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async"></div>
+          <div class="lens__plate lens__plate--g"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async"></div>
+          <div class="lens__plate lens__plate--b"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async"></div>
+        </div>
+        <!-- the grid as seen through the glass -->
+        <div class="lens__plate lens__plate--grid"><picture><source media="(max-width: 720px)" srcset="assets/grid-tall.svg"><img src="assets/grid.svg" alt="" decoding="async"></picture></div>
+        <!-- the logo as seen under the glass: dropped, softened, colours split (off by default; the tuner can bring it back) -->
+        <div class="lens__ghost lens__ghost--r"></div>
+        <div class="lens__ghost lens__ghost--g"></div>
+        <div class="lens__ghost lens__ghost--b"></div>
+      </div>
+      <div class="lens__tint"></div>
+      <div class="lens__glow"></div>
+    </div>
+    <div class="lens__rim lens__rim--c"></div>
+    <div class="lens__rim lens__rim--m"></div>
+    <div class="lens__rim"></div>
+  </div>
+
+  <!-- layer 5: the lockup, crisp, over the glass -->
+  <h1 class="lockup"><img src="assets/orion-lockup-hero.svg" alt="Orion Word Game" width="1383" height="262"></h1>
+
+  <div class="hero__top" aria-hidden="true"></div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="hero__grain" aria-hidden="true"></div>
+
+  <div class="hero__cta">
+    <p class="tagline">A word puzzle that becomes a <em class="tagline__journey">journey</em>.</p>
+    <a class="store" href="https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&amp;ct=website-home&amp;mt=8">
+      <img src="assets/app-store-badge.svg" alt="Download on the App Store" height="56" onerror="this.remove()">
+      <span class="store__text">Download on the App Store</span>
     </a>
+    <p class="hero__note">Free on iPhone</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================ TRAILER ============================ -->
+  <section class="band" id="trailer">
+    <div class="wrap split">
+      <div class="split__text" data-reveal>
+        <p class="eyebrow">Orion Word Game</p>
+        <h2>Familiar puzzles. Unexpected places.</h2>
+        <p>Orion combines anagrams and crosswords with a carefully crafted visual world. Connect letters, uncover hidden words and fill each interlocking grid.</p>
+        <p class="dim">Calm to settle into. Satisfying to solve.</p>
+        <div class="certified">
+          <img src="assets/word-game-badge.webp" alt="Word game" width="400" height="214" loading="lazy">
+          <span>Certified</span>
+        </div>
+      </div>
+      <div class="split__media" data-reveal>
+        <div class="phone-stage" id="trailer-phone">
+          <!-- a tiny live copy of the trailer, blurred large behind the phone: the glow that spills onto the text -->
+          <canvas class="phone__glow" width="72" height="156" aria-hidden="true"></canvas>
+          <button class="phone" type="button" aria-label="Watch the trailer full screen, with sound">
+            <video muted loop playsinline preload="none" poster="assets/trailer-poster.jpg" width="720" height="1560" aria-hidden="true" tabindex="-1">
+              <source src="assets/trailer-30s.mp4" type="video/mp4">
+            </video>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ JOURNEY I HEADER ============================ -->
+  <section class="journey" id="journey" data-parallax aria-label="Orion, Journey I">
+    <div class="journey__bg" aria-hidden="true"><img src="assets/band-blue-2560.webp" srcset="assets/band-blue-1600.webp 1600w, assets/band-blue-2560.webp 2560w" sizes="100vw" alt="" loading="lazy" decoding="async"></div>
+    <img class="journey__logo" src="assets/journey-1.webp" alt="Orion, Journey I" width="711" height="116" loading="lazy">
+  </section>
+
+  <!-- ============================ THREE THINGS ============================ -->
+  <section class="band band--tight" id="game">
+    <div class="wrap">
+      <div class="cards">
+        <article class="card" data-reveal>
+          <div class="card__art"><img class="card__sky" src="assets/space-blue-gold-1080.webp" alt="" loading="lazy" aria-hidden="true"><img class="card__logo card__logo--journey" src="assets/journey-1.webp" alt="Orion, Journey I" width="711" height="116" loading="lazy"></div>
+          <h3>24 Dreams, 144 levels</h3>
+          <p>Each Dream takes you into its own world: six levels of puzzles, with its own characters and discoveries. The first journey begins here.</p>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card__art"><img class="card__sky" src="assets/space-purple-1080.webp" alt="" loading="lazy" aria-hidden="true"><img class="card__logo card__logo--fragments" src="assets/fragments.webp" alt="Dream Fragments" width="480" height="275" loading="lazy"></div>
+          <h3>Three new puzzles a day</h3>
+          <p>For everyone, refreshed daily at 00:00 GMT. Complete all three to keep your streak going.</p>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card__art card__art--avatars" aria-hidden="true">
+            <img class="card__sky" src="assets/space-dawn-1080.webp" alt="" loading="lazy">
+            <div class="avatars">
+              <img src="assets/avatar-cosmic-mouse.webp" alt="" width="220" height="220" loading="lazy">
+              <img src="assets/avatar-morgana.webp" alt="" width="220" height="220" loading="lazy">
+              <img src="assets/avatar-sukoi.webp" alt="" width="220" height="220" loading="lazy">
+              <img src="assets/avatar-terra.webp" alt="" width="220" height="220" loading="lazy">
+            </div>
+          </div>
+          <h3>Make the journey yours</h3>
+          <p>Collect Avatars from the worlds of Orion, and call on powers when a level turns tricky.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ DREAMS STRIP ============================ -->
+  <section class="band band--tight" id="dreams" aria-label="Dreams of Journey I">
+    <div class="wrap strip__head" data-reveal><h2 class="strip__title">Dreams of Journey I</h2><p class="strip__sub dim">A sneak peek at a few of the levels, and the Avatars who live in them.</p></div>
+    <!-- drag with the mouse, swipe, or focus it and use the arrow keys; home.js makes it loop without end -->
+    <div class="strip" data-reveal tabindex="0" role="region" aria-label="Dream pictures">
+      <img src="assets/dream-29.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-30.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-31.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-32.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-33.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-34.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-35.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-36.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-37.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-38.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-39.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-40.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-41.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-42.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-43.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-44.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-45.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+      <img src="assets/dream-46.webp" alt="A Dream from Orion: Journey I" width="720" height="960" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- ============================ CLOSING CALL ============================ -->
+  <section class="band closing" id="begin">
+    <div class="closing__bg" aria-hidden="true" data-rotate="space-purple,space-blue,space-gold,space-dawn" data-rotate-every="20">
+      <img class="slide slide--a on" src="assets/space-purple-1080.webp" srcset="assets/space-purple-1080.webp 1080w, assets/space-purple-1632.webp 1632w" sizes="100vw" alt="" loading="lazy" decoding="async">
+      <img class="slide slide--b" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async">
+    </div>
+    <div class="wrap">
+      <!-- the glass badge: two discs built live, so the space art shows through them; the discs drift a little on scroll (data-parallax) -->
+      <div class="gbadge" data-parallax role="img" aria-label="Orion Word Game">
+        <div class="gbadge__outer"></div>
+        <div class="gbadge__inner"></div>
+        <img class="gbadge__orion" src="assets/orion-wordmark.svg" alt="" width="891" height="128" loading="lazy">
+        <img class="gbadge__wg" src="assets/word-game.svg" alt="" width="520" height="46" loading="lazy">
+      </div>
+      <h2 data-reveal>Begin Journey I</h2>
+      <a class="store" data-reveal href="https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&amp;ct=website-home&amp;mt=8">
+        <img src="assets/app-store-badge.svg" alt="Download on the App Store" height="56" onerror="this.remove()">
+        <span class="store__text">Download on the App Store</span>
+      </a>
+      <p class="hero__note" data-reveal>Free on iPhone. Requires iOS 18.5 or later.</p>
+      <div class="certified certified--center" data-reveal>
+        <img src="assets/word-game-badge.webp" alt="Word game" width="400" height="214" loading="lazy">
+        <span>Certified</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <nav class="foot__links" aria-label="Site">
+      <a href="/help">Help</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/tos">Terms</a>
+      <a href="mailto:press@dreamprism.games">Press</a>
+    </nav>
+    <nav class="foot__links foot__links--social" aria-label="Social">
+      <a href="https://www.instagram.com/orionwordgame/" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@orionwordgame" rel="noopener">TikTok</a>
+      <a href="https://x.com/orionwordgame" rel="noopener">X</a>
+      <a href="https://www.threads.net/@orionwordgame" rel="noopener">Threads</a>
+      <a href="https://bsky.app/profile/orionwordgame.bsky.social" rel="noopener">Bluesky</a>
+      <a href="https://www.facebook.com/orionwordgame" rel="noopener">Facebook</a>
+      <!-- add when the channel is live: <a href="https://www.youtube.com/@orionwordgame" rel="noopener">YouTube</a> -->
+    </nav>
+    <p class="foot__small">Orion Word Game is made by Dream Prism. &copy; 2026 Dream Prism.</p>
+    <p class="foot__small">Apple, the Apple logo and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.</p>
+  </div>
+</footer>
+
+<!-- the full-screen trailer, with sound; opened by tapping the phone -->
+<div class="cinema" role="dialog" aria-modal="true" aria-label="Trailer" hidden>
+  <button class="cinema__close" type="button" aria-label="Close the trailer">&times;</button>
+  <video class="cinema__video" controls playsinline preload="none" poster="assets/trailer-poster.jpg" width="886" height="1920">
+    <source src="assets/trailer-30s-sound.mp4" type="video/mp4">
+  </video>
+</div>
+
+<script src="js/home.js" defer></script>
 </body>
 </html>

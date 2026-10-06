@@ -1,2 +1,5 @@
 .DS_Store
-wm.png
+*.sb-*
+Icon?
+.env*
+node_modules/
