@@ -10,7 +10,20 @@
   'use strict';
 
   var APP_ID = '6807606521';
-  var STORE_URL = 'https://apps.apple.com/app/id' + APP_ID;
+  var PROVIDER_TOKEN = '121878938';
+  // App Analytics attributes a download to whichever campaign token sent it.
+  // A page states its own with data-ct on the script tag; without one the
+  // install still lands in a named campaign rather than in organic traffic.
+  var DEFAULT_CT = 'webbanner';
+
+  var tag = document.currentScript ||
+    document.querySelector('script[src*="smart-banner"]');
+  var campaign = (tag && tag.getAttribute('data-ct')) || DEFAULT_CT;
+
+  var STORE_URL = 'https://apps.apple.com/app/apple-store/id' + APP_ID +
+    '?pt=' + PROVIDER_TOKEN +
+    '&ct=' + encodeURIComponent(campaign) +
+    '&mt=8';
   var TITLE = 'Orion: A Word Puzzle Game';
   var SUBTITLE = 'On the App Store';
   var ICON_SRC = '/appicon.png';
