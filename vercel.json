@@ -2,43 +2,78 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/go/tiktok",
-      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=tiktok-bio&mt=8",
+      "source": "/ig",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=instagram&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/th",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=threads&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/fb",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=facebook&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/yt",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=youtube&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/x",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=x&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/tt",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=tiktok&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/rd",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=reddit&mt=8",
       "permanent": false
     },
     {
       "source": "/go/instagram",
-      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=instagram-bio&mt=8",
-      "permanent": false
-    },
-    {
-      "source": "/go/youtube",
-      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=youtube-bio&mt=8",
-      "permanent": false
-    },
-    {
-      "source": "/go/x",
-      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=x-bio&mt=8",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=instagram&mt=8",
       "permanent": false
     },
     {
       "source": "/go/threads",
-      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=threads-bio&mt=8",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=threads&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/go/facebook",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=facebook&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/go/youtube",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=youtube&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/go/x",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=x&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/go/tiktok",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=tiktok&mt=8",
+      "permanent": false
+    },
+    {
+      "source": "/go/reddit",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=reddit&mt=8",
       "permanent": false
     },
     {
       "source": "/go/bsky",
       "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=bsky-bio&mt=8",
-      "permanent": false
-    },
-    {
-      "source": "/go/facebook",
-      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=facebook-bio&mt=8",
-      "permanent": false
-    },
-    {
-      "source": "/go/reddit",
-      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=reddit-bio&mt=8",
       "permanent": false
     },
     {

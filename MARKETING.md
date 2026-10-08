@@ -22,23 +22,26 @@ storefront. Without one, each visitor gets their own.
 
 ## Social links
 
-Social profiles link to `orionwordgame.com/go/<channel>`, which redirects to
-the store link above. The indirection buys two things: the redirect is counted
-on our side, where Apple only reports downloads and never clicks, and a
-destination can be repointed in one commit instead of editing seven bios.
+Social profiles link to `play.orionwordgame.com/<code>`, which redirects to the
+store link above. The indirection buys two things: the redirect is counted on
+our side, where Apple reports downloads and never clicks, and a destination can
+be repointed in one commit instead of editing every bio.
 
 | Put in the bio | Reports as |
 |---|---|
-| `orionwordgame.com/go/tiktok` | `tiktok-bio` |
-| `orionwordgame.com/go/instagram` | `instagram-bio` |
-| `orionwordgame.com/go/youtube` | `youtube-bio` |
-| `orionwordgame.com/go/x` | `x-bio` |
-| `orionwordgame.com/go/threads` | `threads-bio` |
-| `orionwordgame.com/go/bsky` | `bsky-bio` |
-| `orionwordgame.com/go/facebook` | `facebook-bio` |
-| `orionwordgame.com/go/reddit` | `reddit-bio` |
-| `orionwordgame.com/go/press` | `press-kit` |
-| `orionwordgame.com/download` | `website-download` |
+| `play.orionwordgame.com/ig` | `instagram` |
+| `play.orionwordgame.com/th` | `threads` |
+| `play.orionwordgame.com/fb` | `facebook` |
+| `play.orionwordgame.com/yt` | `youtube` |
+| `play.orionwordgame.com/x` | `x` |
+| `play.orionwordgame.com/tt` | `tiktok` |
+| `play.orionwordgame.com/rd` | `reddit` |
+
+The older `orionwordgame.com/go/<channel>` paths still work and now carry the
+same tokens, so links already published keep going and the two spellings do not
+split the reporting. They can go once every bio is on the short form.
+
+Not part of that scheme, and unchanged: `/go/bsky`, `/go/press`, `/download`.
 
 Routes live in `vercel.json` under `redirects`, as 307s: a permanent redirect
 is cached by the browser and could not be repointed afterwards.
