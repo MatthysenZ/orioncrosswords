@@ -37,6 +37,11 @@
       "permanent": false
     },
     {
+      "source": "/bs",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=bluesky&mt=8",
+      "permanent": false
+    },
+    {
       "source": "/go/instagram",
       "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=instagram&mt=8",
       "permanent": false
@@ -73,7 +78,7 @@
     },
     {
       "source": "/go/bsky",
-      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=bsky-bio&mt=8",
+      "destination": "https://apps.apple.com/app/apple-store/id6807606521?pt=121878938&ct=bluesky&mt=8",
       "permanent": false
     },
     {

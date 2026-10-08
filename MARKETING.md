@@ -36,12 +36,13 @@ be repointed in one commit instead of editing every bio.
 | `play.orionwordgame.com/x` | `x` |
 | `play.orionwordgame.com/tt` | `tiktok` |
 | `play.orionwordgame.com/rd` | `reddit` |
+| `play.orionwordgame.com/bs` | `bluesky` |
 
 The older `orionwordgame.com/go/<channel>` paths still work and now carry the
 same tokens, so links already published keep going and the two spellings do not
 split the reporting. They can go once every bio is on the short form.
 
-Not part of that scheme, and unchanged: `/go/bsky`, `/go/press`, `/download`.
+Not part of that scheme, and unchanged: `/go/press`, `/download`.
 
 Routes live in `vercel.json` under `redirects`, as 307s: a permanent redirect
 is cached by the browser and could not be repointed afterwards.
